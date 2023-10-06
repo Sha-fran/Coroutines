@@ -15,7 +15,7 @@ import kotlinx.coroutines.cancel
 import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
-    private val scope = CoroutineScope(Dispatchers.Main)
+//    private val scope = CoroutineScope(Dispatchers.Main)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,6 +34,7 @@ class MainActivity : AppCompatActivity() {
                 is MyViewModel.UiState.Empty -> result.text = ""
                 is MyViewModel.UiState.Processing -> result.text = "Processing..."
                 is MyViewModel.UiState.Result -> result.text = uiState.title
+                is MyViewModel.UiState.Error -> result.text = "Error!"
             }
         }
 
